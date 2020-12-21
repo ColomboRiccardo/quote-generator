@@ -22,7 +22,7 @@ function complete() {
 //* Get quote from API
 
 const getQuote = async () => {
-	//loading();
+	loading();
 	const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 	const apiUrl =
 		'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
@@ -42,7 +42,7 @@ const getQuote = async () => {
 		}
 
 		quoteText.innerText = data.quoteText;
-		//complete();
+		complete();
 	} catch (err) {
 		console.log('error in fetching', err);
 		getQuote();
