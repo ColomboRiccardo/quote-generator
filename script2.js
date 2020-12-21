@@ -57,7 +57,14 @@ function tweetQuote() {
 	window.open(twitterUrl, '_blank');
 }
 
-getQuotes().then(() => newQuote());
+(async () => {
+	try {
+		await getQuotes();
+		newQuote();
+	} catch {
+		console.log;
+	}
+})();
 
 newQuoteBtn.addEventListener('click', newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
